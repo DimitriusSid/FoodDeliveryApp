@@ -1,0 +1,12 @@
+package by.food.delivery.app.productservice.service;
+
+import by.food.delivery.app.productservice.domain.Product;
+import by.food.delivery.app.productservice.domain.ProductType;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ProductRepository extends JpaRepository<Product, Integer> {
+    List<Product> findAll();
+    List<Product> findAllByProductType(ProductType productType);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+
+    <h2>Registration</h2>
+    <br><br>
+    <button>Sign In</button>
+    <br><br>
+    <button>Sign Up</button>
+    <br><br>
+
+    <h2>Products</h2>
+
+    <button onclick=window.location.href='/products.html'>All Menu</button>
+    <button onclick=window.location.href='/burgers.html'>Burgers</button>
+    <button>Doners</button>
+
+    <table th:border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Date</th>
+        </tr>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.getId()}"></td>
+            <td th:text="${product.getName()}"></td>
+            <td th:text="${product.getProductType()}"></td>
+            <td th:text="${product.getCreationDate()}"></td>
+        </tr>
+    </table>
+</body>
+</html>
