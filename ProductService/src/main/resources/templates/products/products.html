@@ -4,35 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
+    <script type="text/javascript" th:src="@{/js/script.js}"></script>
 </head>
 <body>
-
-    <h2>Registration</h2>
-    <br><br>
+    <h2>User options</h2>
     <button>Sign In</button>
     <br><br>
     <button>Sign Up</button>
-    <br><br>
 
-    <h2>Products</h2>
+    <h2>Creation order</h2>
+    <h3>Select products and press create order</h3>
 
     <button onclick=window.location.href='/products'>All Menu</button>
+    <button onclick=window.location.href='/doners'>Doners</button>
+    <button onclick=window.location.href='/salads'>Salads</button>
+    <button onclick=window.location.href='/fries'>Fries</button>
+    <button onclick=window.location.href='/sauces'>Sauces</button>
+    <button onclick=window.location.href='/dessert'>Desserts</button>
+    <button onclick=window.location.href='/drinks'>Drinks</button>
     <button onclick=window.location.href='/burgers'>Burgers</button>
-    <button>Doners</button>
 
-    <table th:border="1">
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Date</th>
-        </tr>
-        <tr th:each="product : ${products}">
-            <td th:text="${product.getId()}"></td>
-            <td th:text="${product.getName()}"></td>
-            <td th:text="${product.getProductType()}"></td>
-            <td th:text="${product.getCreationDate()}"></td>
-        </tr>
-    </table>
+    <span>Menu</span>
+
+    <form th:action="@{/burgers}" method="post">
+
+        <table th:border="1">
+            <tr>
+                <th>Product type</th>
+                <th>Product name</th>
+                <th>Count</th>
+                <th>Add to order</th>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.getProductType()}"></td>
+                <td id="name" th:text="${product.getName()}"></td>
+                <td id="number">
+                    <input type="number">
+                </td>
+                <td>
+                    <input type="button" value="Add to order"
+                           onclick="window.localStorage.setItem(document.getElementById('name').innerHTML,
+                            document.getElementById('number').innerHTML)">
+                </td>
+            </tr>
+        </table>
+
+        <br>
+        <br>
+
+        <input th:type="submit" value="Create order">
+    </form>
+
+
+
 </body>
 </html>

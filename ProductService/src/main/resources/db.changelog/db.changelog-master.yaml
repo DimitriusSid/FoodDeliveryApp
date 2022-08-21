@@ -1,0 +1,188 @@
+databaseChangeLog:
+  - preConditions:
+      - onFail: MARK_RAN
+      - tableExist:
+          tableName: products
+  - changeSet:
+      id: 1
+      author: dimitrius_sid_test
+      changes:
+        - createTable:
+            tableName: products
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(256)
+                  constraints:
+                    unique: false
+                    nullable: false
+              - column:
+                  name: product_type
+                  type: varchar(32)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
+                  name: creation_date
+                  type: date
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+                    unique: false
+  - changeSet:
+      id: 2
+      author: dimitrius_sid_test
+      changes:
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Banditos"
+              - column:
+                  name: product_type
+                  value: "DONER"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Vegetarian"
+              - column:
+                  name: product_type
+                  value: "DONER"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Сhicken"
+              - column:
+                  name: product_type
+                  value: "DONER"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Beef Burger"
+              - column:
+                  name: product_type
+                  value: "BURGER"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Chicken Burger"
+              - column:
+                  name: product_type
+                  value: "BURGER"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Beef Cheeseburger"
+              - column:
+                  name: product_type
+                  value: "BURGER"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Donuts with vanilla cream"
+              - column:
+                  name: product_type
+                  value: "DESSERT"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Donuts with chocolate cream"
+              - column:
+                  name: product_type
+                  value: "DESSERT"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Mirinda"
+              - column:
+                  name: product_type
+                  value: "DRINK"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Pepsi"
+              - column:
+                  name: product_type
+                  value: "DRINK"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Adrenaline Rush"
+              - column:
+                  name: product_type
+                  value: "DRINK"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Caesar salad"
+              - column:
+                  name: product_type
+                  value: "SALAD"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Ketchup"
+              - column:
+                  name: product_type
+                  value: "SAUCE"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Ketchup"
+              - column:
+                  name: product_type
+                  value: "SAUCE"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Mustard"
+              - column:
+                  name: product_type
+                  value: "SAUCE"
+        - insert:
+            tableName: products
+            columns:
+              - column:
+                  name: name
+                  value: "Fries"
+              - column:
+                  name: product_type
+                  value: "FRIES"
+
+
