@@ -72,6 +72,12 @@ public class AppController {
         return "products/products";
     }
 
+    @PostMapping("")
+    public String createOrder() {
+        return "redirect:orders";
+    }
+
+
     private List<Product> getProducts(ProductType productType) {
         return productRepository.findAllByProductType(productType);
     }
