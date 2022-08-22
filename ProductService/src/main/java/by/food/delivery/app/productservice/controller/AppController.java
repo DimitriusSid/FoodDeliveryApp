@@ -30,18 +30,49 @@ public class AppController {
         return "products/products";
     }
 
-    @PostMapping("")
-    public String showOrder() {
-        return "products/burgers";
+    @GetMapping("/doners")
+    public String showDoners(Model model) {
+        model.addAttribute("products", getProducts(ProductType.DONER));
+        return "products/products";
     }
 
     @GetMapping("/burgers")
-    public String showAllBurgers(Model model) {
-        List<Product> products = productRepository.findAllByProductType(ProductType.BURGER);
-        model.addAttribute("products", products);
-        return "products/burgers";
+    public String showBurgers(Model model) {
+        model.addAttribute("products", getProducts(ProductType.BURGER));
+        return "products/products";
     }
 
+    @GetMapping("/salads")
+    public String showSalads(Model model) {
+        model.addAttribute("products", getProducts(ProductType.SALAD));
+        return "products/products";
+    }
 
+    @GetMapping("/fries")
+    public String showFries(Model model) {
+        model.addAttribute("products", getProducts(ProductType.FRIES));
+        return "products/products";
+    }
 
+    @GetMapping("/sauces")
+    public String showSauces(Model model) {
+        model.addAttribute("products", getProducts(ProductType.SAUCE));
+        return "products/products";
+    }
+
+    @GetMapping("/desserts")
+    public String showDesserts(Model model) {
+        model.addAttribute("products", getProducts(ProductType.DESSERT));
+        return "products/products";
+    }
+
+    @GetMapping("/drinks")
+    public String showDrinks(Model model) {
+        model.addAttribute("products", getProducts(ProductType.DRINK));
+        return "products/products";
+    }
+
+    private List<Product> getProducts(ProductType productType) {
+        return productRepository.findAllByProductType(productType);
+    }
 }

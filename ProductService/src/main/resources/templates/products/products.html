@@ -5,56 +5,61 @@
     <meta charset="UTF-8">
     <title>Products</title>
     <script type="text/javascript" th:src="@{/js/script.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <h2>User options</h2>
-    <button>Sign In</button>
-    <br><br>
-    <button>Sign Up</button>
+
+    <button class="registration">Sign In</button>
+    <button class="registration">Sign Up</button>
 
     <h2>Creation order</h2>
     <h3>Select products and press create order</h3>
 
-    <button onclick=window.location.href='/products'>All Menu</button>
-    <button onclick=window.location.href='/doners'>Doners</button>
-    <button onclick=window.location.href='/salads'>Salads</button>
-    <button onclick=window.location.href='/fries'>Fries</button>
-    <button onclick=window.location.href='/sauces'>Sauces</button>
-    <button onclick=window.location.href='/dessert'>Desserts</button>
-    <button onclick=window.location.href='/drinks'>Drinks</button>
-    <button onclick=window.location.href='/burgers'>Burgers</button>
+    <button class="products" onclick=window.location.href='/products'>All Menu</button>
+    <button class="products" onclick=window.location.href='/products/doners'>Doners</button>
+    <button class="products" onclick=window.location.href='/products/burgers'>Burgers</button>
+    <button class="products" onclick=window.location.href='/products/salads'>Salads</button>
+    <button class="products" onclick=window.location.href='/products/fries'>Fries</button>
+    <button class="products" onclick=window.location.href='/products/sauces'>Sauces</button>
+    <button class="products" onclick=window.location.href='/products/desserts'>Desserts</button>
+    <button class="products" onclick=window.location.href='/products/drinks'>Drinks</button>
 
-    <span>Menu</span>
+    <br><br>
 
     <form th:action="@{/burgers}" method="post">
 
-        <table th:border="1">
+        <table>
             <tr>
-                <th>Product type</th>
+                <th>Type</th>
                 <th>Product name</th>
+                <th>Price per item</th>
                 <th>Count</th>
+                <th>Total price</th>
                 <th>Add to order</th>
             </tr>
             <tr th:each="product : ${products}">
                 <td th:text="${product.getProductType()}"></td>
                 <td id="name" th:text="${product.getName()}"></td>
+                <td th:id="${product.getId()} + 'price'" th:text="${product.getPrice()}"></td>
                 <td id="number">
-                    <input type="number">
+                    <label>
+                    <input th:id="${product.getId()}" th:class="${product.getId()} + 'count_class'" class="products_count" min="0" value="0" max="9" type="number" onchange="setTotalPrice(this)">
+                    </label>
                 </td>
+                <td th:id="${product.getId()} + 'total_price'" class="total_price">0.00</td>
                 <td>
-                    <input type="button" value="Add to order"
-                           onclick="window.localStorage.setItem(document.getElementById('name').innerHTML,
-                            document.getElementById('number').innerHTML)">
+                    <input th:id="${product.getId()}" th:class="${product.getId()} + 'localStorage_class'" type="button" value="Add to order" onclick="addElementToLocalStorage(this)">
                 </td>
             </tr>
         </table>
-
         <br>
-        <br>
-
-        <input th:type="submit" value="Create order">
+        <input class="order" th:type="submit" value="Create order">
+        <input class="order" type="button" value="Reset order" onclick="clearLocalStorage()">
     </form>
-
+    <script>
+        window.fillTable();
+    </script>
 
 
 </body>

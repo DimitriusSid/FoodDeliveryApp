@@ -30,6 +30,12 @@ databaseChangeLog:
                     nullable: false
                     unique: false
               - column:
+                  name: price
+                  type: numeric(5, 2)
+                  constraints:
+                    nullable: false
+                    unique: false
+              - column:
                   name: creation_date
                   type: date
                   defaultValue: now()
@@ -49,6 +55,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DONER"
+              - column:
+                  name: price
+                  value: 35.98
         - insert:
             tableName: products
             columns:
@@ -58,6 +67,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DONER"
+              - column:
+                  name: price
+                  value: 30.37
         - insert:
             tableName: products
             columns:
@@ -67,6 +79,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DONER"
+              - column:
+                  name: price
+                  value: 33.05
         - insert:
             tableName: products
             columns:
@@ -76,6 +91,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "BURGER"
+              - column:
+                  name: price
+                  value: 36.12
         - insert:
             tableName: products
             columns:
@@ -85,6 +103,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "BURGER"
+              - column:
+                  name: price
+                  value: 24.57
         - insert:
             tableName: products
             columns:
@@ -94,6 +115,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "BURGER"
+              - column:
+                  name: price
+                  value: 28.71
         - insert:
             tableName: products
             columns:
@@ -103,6 +127,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DESSERT"
+              - column:
+                  name: price
+                  value: 18.99
         - insert:
             tableName: products
             columns:
@@ -112,6 +139,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DESSERT"
+              - column:
+                  name: price
+                  value: 19.25
         - insert:
             tableName: products
             columns:
@@ -121,6 +151,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DRINK"
+              - column:
+                  name: price
+                  value: 8.50
         - insert:
             tableName: products
             columns:
@@ -130,6 +163,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DRINK"
+              - column:
+                  name: price
+                  value: 8.50
         - insert:
             tableName: products
             columns:
@@ -139,6 +175,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "DRINK"
+              - column:
+                  name: price
+                  value: 10.25
         - insert:
             tableName: products
             columns:
@@ -148,6 +187,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "SALAD"
+              - column:
+                  name: price
+                  value: 25.73
         - insert:
             tableName: products
             columns:
@@ -157,15 +199,21 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "SAUCE"
+              - column:
+                  name: price
+                  value: 5.70
         - insert:
             tableName: products
             columns:
               - column:
                   name: name
-                  value: "Ketchup"
+                  value: "Mayonnaise"
               - column:
                   name: product_type
                   value: "SAUCE"
+              - column:
+                  name: price
+                  value: 5.75
         - insert:
             tableName: products
             columns:
@@ -175,6 +223,9 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "SAUCE"
+              - column:
+                  name: price
+                  value: 6.00
         - insert:
             tableName: products
             columns:
@@ -184,5 +235,8 @@ databaseChangeLog:
               - column:
                   name: product_type
                   value: "FRIES"
+              - column:
+                  name: price
+                  value: 12.45
 
 

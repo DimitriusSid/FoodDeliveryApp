@@ -3,6 +3,7 @@ package by.food.delivery.app.productservice.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Setter
@@ -25,6 +26,9 @@ public class Product {
     @Column(name = "product_type")
     @Enumerated(EnumType.STRING)
     private ProductType productType;
+
+    @Column(name = "price")
+    private BigDecimal price;
 
     @Column(name = "creation_date")
     private Date creationDate;
