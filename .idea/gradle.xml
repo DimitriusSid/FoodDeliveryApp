@@ -22,6 +22,11 @@
                   <project path="$PROJECT_DIR$/ProductService" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/OrderService" name="OrderService">
+                <projects>
+                  <project path="$PROJECT_DIR$/OrderService" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -32,6 +37,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ApiGateway" />
             <option value="$PROJECT_DIR$/EurekaServer" />
+            <option value="$PROJECT_DIR$/OrderService" />
             <option value="$PROJECT_DIR$/ProductService" />
           </set>
         </option>
@@ -51,6 +57,15 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/EurekaServer" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/OrderService" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/OrderService" />
           </set>
         </option>
       </GradleProjectSettings>

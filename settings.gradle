@@ -3,3 +3,4 @@ rootProject.name = 'FoodDelivery'
 includeBuild "EurekaServer"
 includeBuild "ApiGateway"
 includeBuild "ProductService"
+includeBuild "OrderService"

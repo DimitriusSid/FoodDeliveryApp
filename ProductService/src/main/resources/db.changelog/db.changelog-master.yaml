@@ -5,7 +5,7 @@ databaseChangeLog:
           tableName: products
   - changeSet:
       id: 1
-      author: dimitrius_sid_test
+      author: dimitrius_sid
       changes:
         - createTable:
             tableName: products
@@ -44,7 +44,7 @@ databaseChangeLog:
                     unique: false
   - changeSet:
       id: 2
-      author: dimitrius_sid_test
+      author: dimitrius_sid
       changes:
         - insert:
             tableName: products
