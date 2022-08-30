@@ -27,6 +27,11 @@
                   <project path="$PROJECT_DIR$/OrderService" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/UserService" name="UserService">
+                <projects>
+                  <project path="$PROJECT_DIR$/UserService" />
+                </projects>
+              </build>
             </builds>
           </compositeBuild>
         </compositeConfiguration>
@@ -39,6 +44,7 @@
             <option value="$PROJECT_DIR$/EurekaServer" />
             <option value="$PROJECT_DIR$/OrderService" />
             <option value="$PROJECT_DIR$/ProductService" />
+            <option value="$PROJECT_DIR$/UserService" />
           </set>
         </option>
       </GradleProjectSettings>
@@ -78,6 +84,16 @@
           </set>
         </option>
       </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/UserService" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/UserService" />
+          </set>
+        </option>
+      </GradleProjectSettings>
     </option>
+    <option name="offlineMode" value="true" />
   </component>
 </project>
