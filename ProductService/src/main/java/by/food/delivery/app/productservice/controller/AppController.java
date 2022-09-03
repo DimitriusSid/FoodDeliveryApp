@@ -75,7 +75,7 @@ public class AppController {
     @PostMapping("")
     public String createOrder() {
 
-        return "redirect:orders";
+        return "forward:localhost:7771/orders";
     }
 
 

@@ -4,8 +4,11 @@ import by.food.delivery.app.userservice.domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import by.food.delivery.app.userservice.service.UserRepository;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/users")
@@ -38,7 +41,10 @@ public class AppController {
     }
 
     @PostMapping("")
-    public String saveNewUser(@ModelAttribute("user") User user) {
+    public String saveNewUser(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "users/user";
+        }
         userRepository.save(user);
         return "redirect:users";
     }
