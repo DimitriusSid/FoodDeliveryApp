@@ -3,34 +3,16 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Products</title>
+    <title>Confirm Order</title>
     <link rel="stylesheet" type="text/css" th:href="@{/products/css/style.css}">
     <script type="text/javascript" th:src="@{/products/js/script.js}"></script>
 </head>
 <body>
-    <h2>User options</h2>
-
-    <button class="registration">Sign In</button>
-    <button class="registration">Sign Up</button>
-
-    <h2>Creation order</h2>
-    <h3>Select products and press create order</h3>
-
-    <button class="products" onclick=window.location.href='/products'>All Menu</button>
-    <button class="products" onclick=window.location.href='/products/doners'>Doners</button>
-    <button class="products" onclick=window.location.href='/products/burgers'>Burgers</button>
-    <button class="products" onclick=window.location.href='/products/salads'>Salads</button>
-    <button class="products" onclick=window.location.href='/products/fries'>Fries</button>
-    <button class="products" onclick=window.location.href='/products/sauces'>Sauces</button>
-    <button class="products" onclick=window.location.href='/products/desserts'>Desserts</button>
-    <button class="products" onclick=window.location.href='/products/drinks'>Drinks</button>
-
-    <br><br>
+    <h3>Check and confirm your order</h3>
 
     <form th:action="@{/products/new}" method="post">
         <table>
             <tr>
-                <th>Type</th>
                 <th>Product name</th>
                 <th>Price per item</th>
                 <th>Count</th>
@@ -38,12 +20,11 @@
                 <th>Add to order</th>
             </tr>
             <tr th:each="product : ${products}">
-                <td th:text="${product.getProductType()}"></td>
-                <td id="name" th:text="${product.getName()}"></td>
+                <td th:if="" id="name" th:text="${product.getName()}"></td>
                 <td th:id="${product.getId()} + 'price'" th:text="${product.getPrice()}"></td>
                 <td id="number">
                     <label>
-                    <input th:id="${product.getId()}" th:class="${product.getId()} + 'count_class'" class="products_count" min="0" value="0" max="9" type="number" onchange="setTotalPrice(this)">
+                        <input th:id="${product.getId()}" th:class="${product.getId()} + 'count_class'" class="products_count" min="0" value="0" max="9" type="number" onchange="setTotalPrice(this)">
                     </label>
                 </td>
                 <td th:id="${product.getId()} + 'total_price'" class="total_price">0.00</td>
@@ -59,5 +40,7 @@
     <script>
         window.fillTable();
     </script>
+
+
 </body>
 </html>
