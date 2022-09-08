@@ -4,11 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
-<!--    <script type="text/javascript" th:src="@{__${#httpServletRequest.contextPath}__/js/script.js}"></script>-->
-<!--    <link rel="stylesheet" th:href="@{__${#httpServletRequest.contextPath}__/css/style.css}">-->
+<!--    <link rel="stylesheet" type="text/css" th:href="@{/products/css/style.css}">-->
+<!--    <script type="text/javascript" th:src="@{/products/js/script.js}"></script>-->
 </head>
 <body>
     <h3>Check and confirm your order</h3>
+
+    <form th:action="@{/}" th:object="${shoppingCarts}" method="post">
+        <table>
+            <tr>
+                <th>Test</th>
+            </tr>
+            <tr th:each="shoppingCart : ${shoppingCarts}">
+
+            </tr>
+        </table>
+
+
+    </form>
 
 </body>
 </html>

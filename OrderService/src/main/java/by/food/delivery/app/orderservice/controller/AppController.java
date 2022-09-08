@@ -1,16 +1,22 @@
 package by.food.delivery.app.orderservice.controller;
 
+import by.food.delivery.app.orderservice.domain.ShoppingCart;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Controller
-@RequestMapping("/orders")
 public class AppController {
 
-    @GetMapping("")
-    public String showShoppingCart() {
-       return "cart";
+    @GetMapping("/new")
+    public String showShoppingCart(Model model) {
+        List<ShoppingCart> shoppingCarts = new ArrayList<>();
+        model.addAttribute("shoppingCarts", shoppingCarts);
+        return "cart";
     }
 
 }

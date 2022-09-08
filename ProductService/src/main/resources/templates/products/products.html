@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Products</title>
-    <script type="text/javascript" th:src="@{__${#httpServletRequest.contextPath}__/js/script.js}"></script>
-    <link rel="stylesheet" th:href="@{__${#httpServletRequest.contextPath}__/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/products/css/style.css}">
+    <script type="text/javascript" th:src="@{/products/js/script.js}"></script>
 </head>
 <body>
     <h2>User options</h2>
@@ -27,7 +27,7 @@
 
     <br><br>
 
-    <form th:action="@{/products}" method="post">
+    <form th:action="@{/products/sendOrder}" method="get">
         <table>
             <tr>
                 <th>Type</th>

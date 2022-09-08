@@ -6,14 +6,14 @@ import by.food.delivery.app.productservice.service.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/products")
 public class AppController {
 
     private final ProductRepository productRepository;
@@ -72,12 +72,14 @@ public class AppController {
         return "products/products";
     }
 
-    @PostMapping("")
-    public String createOrder() {
-
-        return "forward:localhost:7771/orders";
+    /**
+     * This method redirects to OrderService
+     */
+    @GetMapping("/sendOrder")
+    public String sendOrder() {
+        System.out.println(1);
+        return "redirect:localhost:8765/orders/new";
     }
-
 
     private List<Product> getProducts(ProductType productType) {
         return productRepository.findAllByProductType(productType);

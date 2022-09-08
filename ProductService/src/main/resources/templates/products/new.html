@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Order</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/products/css/style.css}">
+    <script type="text/javascript" th:src="@{/products/js/script.js}"></script>
+</head>
+<body>
+    <h3>Check and confirm your order</h3>
+<!--    <form th:action="@{/products/sendOrder}" method="post">-->
+
+<!--        <table>-->
+<!--            <tr>-->
+<!--                <th>Product name</th>-->
+<!--                <th>Price per item</th>-->
+<!--                <th>Count</th>-->
+<!--                <th>Total price</th>-->
+<!--                <th>Remove from order</th>-->
+<!--            </tr>-->
+<!--            <tr th:each="product : ${products}">-->
+<!--                <td th:text="${product.getProductType()}"></td>-->
+<!--            </tr>-->
+<!--        </table>-->
+<!--    </form>-->
+
+    <button th:onclick="test()">Test</button>
+    <input type="text" value="123" th:if="test2()">
+
+    <script th:inline="javascript">
+        function test(){
+            alert("Hello world")
+        }
+
+        function test2(){
+            alert("Hi!");
+
+        }
+    </script>
+
+
+
+</body>
+</html>

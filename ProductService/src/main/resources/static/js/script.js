@@ -21,6 +21,12 @@ function addElementToLocalStorage(element) {
     changeButtonColorAfterPuttingInLocalStorage(element)
 }
 
+function removeElementFromLocalStorage(element) {
+    let id = element.id;
+    localStorage.removeItem(id);
+    location.reload();
+}
+
 function changeButtonColorAfterPuttingInLocalStorage(element) {
     let id = element.id;
     document.getElementsByClassName(id + 'localStorage_class').item(0).style.background = '#7eff5e';
