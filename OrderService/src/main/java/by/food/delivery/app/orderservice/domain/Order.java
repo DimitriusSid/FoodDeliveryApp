@@ -4,9 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Setter
 @Getter
@@ -22,22 +20,16 @@ public class Order {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "user_id")
+    private Long userId;
+
+    @Column(name = "cart_id")
+    private Long cartId;
+
     @Column(name = "total_price")
     private BigDecimal totalPrice;
 
     @Column(name = "creation_date")
     private Date creationDate;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "orders_shoppingcarts",
-    joinColumns = @JoinColumn(name = "order_id"))
-    private List<ShoppingCart> shoppingCartList;
-
-    public void addShoppingCartToOrder(ShoppingCart shoppingCart) {
-        if (shoppingCartList == null) {
-            shoppingCartList = new ArrayList<>();
-        }
-        shoppingCartList.add(shoppingCart);
-    }
 
 }

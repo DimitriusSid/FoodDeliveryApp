@@ -1,19 +1,16 @@
-package by.food.delivery.app.productservice;
+package by.food.delivery.app.cartservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 
-import javax.servlet.http.HttpServletRequest;
-
 @SpringBootApplication
 @EnableEurekaClient
-@EnableFeignClients
-public class ProductServiceApplication {
+public class CartServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProductServiceApplication.class, args);
+        SpringApplication.run(CartServiceApplication.class, args);
     }
 
 }

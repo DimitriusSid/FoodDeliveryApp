@@ -6,10 +6,8 @@ import by.food.delivery.app.productservice.service.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.servlet.ModelAndView;
+
 
 import java.util.List;
 
@@ -77,8 +75,7 @@ public class AppController {
      */
     @GetMapping("/sendOrder")
     public String sendOrder() {
-        System.out.println(1);
-        return "redirect:localhost:8765/orders/new";
+        return "redirect:http://localhost:8765/carts";
     }
 
     private List<Product> getProducts(ProductType productType) {
